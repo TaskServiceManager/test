@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="change">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="change.js"></script>
+</head>
+
+<body>
+<div class="container" ng-controller="indexController2">
+
+    <h3>Редактировать сведения о заказе</h3>
+    <input type="text" ng-model="updateOrder.title" id="inputTitle" class="form-control" value="{{GetOrderTitle}}" placeholder="{{GetOrderTitle}}">
+    <p/>
+    <p/>
+
+    <input type="text" ng-model="updateOrder.text" id="inputText" class="form-control" value="{{OrderText}}" placeholder="{{GetOrderText}}">
+    <p/>
+
+    <input type="text" ng-model="updateOrder.comment" id="inputComment" class="form-control" value="{{OrderComment}}" placeholder="{{GetOrderComment}}">
+    <p/>
+
+    <button class="btn btn-primary" ng-click="changeOrder(newOrder)">Изменить</button>
+
+
+</div>
+
+</body>
+</html>

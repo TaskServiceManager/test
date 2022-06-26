@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+   .btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+   }
+  </style>
+</head>
+
+<body>
+<div class="container" ng-controller="indexController">
+
+    <h1>Список заказов</h1>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>Заказ</td>
+            <td>Имя</td>
+            <td>Комментарий</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="stud in OrdersList">
+            <td>{{stud.title}}</td>
+            <td>{{stud.text}}</td>
+            <td>{{stud.comment}}</td>
+            <td>
+                <button class="btn btn-outline-danger" ng-click="deleteOrderById(stud.id)">Удалить</button>
+                <a href="change.html" class="btn">Редактировать</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3>Добавить сведения о новом заказах</h3>
+    <input type="text" ng-model="newOrder.title" id="inputTitle" class="form-control" placeholder="Укажите имя заказа">
+    <p/>
+    <p/>
+
+    <input type="text" ng-model="newOrder.text" id="inputText" class="form-control" placeholder="Напишите описание Заказа">
+    <p/>
+
+    <input type="text" ng-model="newOrder.comment" id="inputComment" class="form-control" placeholder="Напишите комментарий у Заказу">
+    <p/>
+
+    <button class="btn btn-primary" ng-click="createNewOrder(newOrder)">Добавить</button>
+
+
+</div>
+
+</body>
+</html>
